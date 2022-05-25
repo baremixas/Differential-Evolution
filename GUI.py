@@ -1,17 +1,10 @@
-import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QLineEdit, QTextEdit
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Slot
 
 import numpy as np
-import copy
-import matplotlib.pyplot as plt
-from math import e, pi
 
 from differential_algorithm import DifferentialEvolution
-
-bounds = []
-func_list = []
 
 def sin(x):
     return np.sin(x)
@@ -55,6 +48,15 @@ class MainWindow(QMainWindow):
         self.window.all_restrict_functions.setReadOnly(True)
         self.window.all_linear_bounds.setReadOnly(True)
 
+        self.window.line_insert_objective_function.setText('x[0] + x[1]')
+        self.window.line_insert_linear_bounds.setText('[]')
+        self.window.iteration_number.setText('50')
+        self.window.population_number.setText('30')
+        self.window.CR_var.setText('0.5')
+        self.window.F_var.setText('0.5')
+
+        self.differential = DifferentialEvolution()
+
         self.show()
 
     @Slot()
@@ -63,50 +65,42 @@ class MainWindow(QMainWindow):
         self.window.min_arguments.clear()
 
         try:
-            L = int(self.window.iteration_number.toPlainText())
+            self.differential.L = int(self.window.iteration_number.text())
         except:
             print('Wrong number of iterations (has to be int)')
 
         try:
-            population_size = int(self.window.population_number.toPlainText())
+            self.differential.POPULATION_SIZE = int(self.window.population_number.text())
         except:
             print('Wrong number of population (has to be int)')
 
         try:
-            CR = float(self.window.CR_var.text())
+            self.differential.CR = float(self.window.CR_var.text())
         except:
             print('Wrong CR parameter (has to be float [0.0, 1.0])')
 
         try:
-            F = float(self.window.F_var.item(self.window.F_var.currentRow()).text())
+            self.differential.F = float(self.window.F_var.text())
         except:
             print('Wrong F parameter, pick from the list')
 
-        num_arg = self.window.number_arg.value()
+        self.differential.ARG_NUMBER = self.window.number_arg.value()
+        self.differential.FUNCTION = self.window.line_insert_objective_function.text()
 
-        function_str = self.window.line_insert_objective_function.text()
-
-
-        diff = DifferentialEvolution(function_str, num_arg, bounds, func_list, population_size, L, F, CR)
-        min_val, min_arg = diff.differential_algorithm()
-
+        min_val, min_arg = self.differential.differential_algorithm()
 
         self.window.min_value.append(str(min_val))
         self.window.min_arguments.append(str(min_arg))
 
     @Slot()
     def add_restrict(self):
-        global num_arg, L, F, CR, population_size, num_arg, func_list, bounds
-
         fun = self.window.line_insert_restrict_function.text()
         self.window.all_restrict_functions.append(fun)
 
-        func_list.append(fun)
+        self.differential.RESTRICT_FUNCTIONS.append(fun)
 
     @Slot()
     def add_bounds(self):
-        global num_arg, L, F, CR, population_size, num_arg, func_list, bounds
-
         bound = self.window.line_insert_linear_bounds.text()
         self.window.all_linear_bounds.append(bound)
 
@@ -118,16 +112,12 @@ class MainWindow(QMainWindow):
             else:
                 bound_stripped.pop()
 
-        bounds.append(bound_stripped)
+        self.differential.BOUNDS.append(bound_stripped)
 
     @Slot()
     def clear_bounds(self):
-        global num_arg, L, F, CR, population_size, num_arg, func_list, bounds
-
-        bounds.clear()
+        self.differential.BOUNDS.clear()
 
     @Slot()
     def clear_functions(self):
-        global num_arg, L, F, CR, population_size, num_arg, func_list, bounds
-
-        func_list.clear()
+        self.differential.RESTRICT_FUNCTIONS.clear()

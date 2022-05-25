@@ -343,100 +343,6 @@
     <string>Clear all linear bounds</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="iteration_number">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>230</y>
-     <width>104</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>30</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="F_var">
-   <property name="geometry">
-    <rect>
-     <x>850</x>
-     <y>230</y>
-     <width>51</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="contextMenuPolicy">
-    <enum>Qt::DefaultContextMenu</enum>
-   </property>
-   <property name="accessibleName">
-    <string>0</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAsNeeded</enum>
-   </property>
-   <property name="dragDropMode">
-    <enum>QAbstractItemView::NoDragDrop</enum>
-   </property>
-   <property name="defaultDropAction">
-    <enum>Qt::CopyAction</enum>
-   </property>
-   <property name="verticalScrollMode">
-    <enum>QAbstractItemView::ScrollPerItem</enum>
-   </property>
-   <property name="movement">
-    <enum>QListView::Static</enum>
-   </property>
-   <property name="flow">
-    <enum>QListView::TopToBottom</enum>
-   </property>
-   <property name="resizeMode">
-    <enum>QListView::Fixed</enum>
-   </property>
-   <property name="layoutMode">
-    <enum>QListView::SinglePass</enum>
-   </property>
-   <property name="viewMode">
-    <enum>QListView::ListMode</enum>
-   </property>
-   <property name="selectionRectVisible">
-    <bool>false</bool>
-   </property>
-   <property name="sortingEnabled">
-    <bool>false</bool>
-   </property>
-   <item>
-    <property name="text">
-     <string>0.4</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>0.5</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>0.9</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
@@ -549,28 +455,6 @@
     </size>
    </property>
   </widget>
-  <widget class="QTextEdit" name="population_number">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>370</y>
-     <width>104</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>30</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
@@ -617,6 +501,9 @@
    </property>
    <property name="minimum">
     <number>1</number>
+   </property>
+   <property name="value">
+    <number>2</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
@@ -781,6 +668,72 @@
    </property>
    <property name="text">
     <string>Minimum element</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="iteration_number">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>240</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="population_number">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>370</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="F_var">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>240</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
  </widget>

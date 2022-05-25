@@ -24,19 +24,13 @@ def sqrt(x):
 
 
 class DifferentialEvolution:
-    def __init__(self, function, arg_number, bounds, restrict_functions, population_size, L, F, CR):
-        self.FUNCTION = function
-        self.ARG_NUMBER = arg_number
-        self.BOUNDS = bounds
-        self.RESTRICT_FUNCTIONS = restrict_functions
-        self.POPULATION_SIZE = population_size
-        self.L = L
-        self.F = F
-        self.CR = CR
-
-        self.population = []
+    def __init__(self):
+        self.BOUNDS = []
+        self.RESTRICT_FUNCTIONS = []
 
     def initialize_population(self):
+        self.population = []
+
         for i in range(self.POPULATION_SIZE):
             self.population.append([])
 
@@ -151,6 +145,8 @@ class DifferentialEvolution:
 
         min_val = population_fitness[0]
         min_arg = self.population[0]
+        # min_arg_x1_list = []
+        # min_arg_x2_list = []
 
         while loop == True:
             for i in range(len(self.population)):
@@ -166,6 +162,8 @@ class DifferentialEvolution:
                 if population_fitness[i] < min_val:
                     min_val = population_fitness[i]
                     min_arg = self.population[i]
+                    # min_arg_x1_list.append(min_arg[0])
+                    # min_arg_x2_list.append(min_arg[1])
 
             population_H = copy.deepcopy(self.population)
 
@@ -193,6 +191,7 @@ class DifferentialEvolution:
             plt.plot(min_arg[0], min_arg[1], 'rx', ms=5)
             plt.xlabel('x')
             plt.ylabel('y')
+            # plt.plot(min_arg_x1_list,min_arg_x2_list, 'Black')
 
         if self.ARG_NUMBER == 3:
             if len(self.BOUNDS[0]) != 0:
