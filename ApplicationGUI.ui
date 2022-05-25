@@ -87,7 +87,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Insert restrict function as:  f(x[n]) &lt;= 0</string>
+    <string>Insert restrict function as:  g(x[n]) &lt;= 0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_insert_restrict_function">

@@ -188,6 +188,13 @@ class DifferentialEvolution:
 
             plt.figure()
             plt.colorbar(plt.contourf(xx, yy, z, 50, cmap='turbo'))
+
+            for i in x:
+                for j in y:
+                    for value in self.read_function(self.RESTRICT_FUNCTIONS, [i, j]):
+                        if value > 0:
+                            plt.plot(i, j, 'wo', ms=2)
+
             plt.plot(min_arg[0], min_arg[1], 'rx', ms=5)
             plt.xlabel('x')
             plt.ylabel('y')
