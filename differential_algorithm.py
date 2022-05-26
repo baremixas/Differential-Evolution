@@ -124,67 +124,75 @@ class DifferentialEvolution:
         # Initialise random population within the specified bounds
         self.initialize_population()
 
-        objective_function = [self.FUNCTION]
+        self.objective_function = [self.FUNCTION]
 
         # Calculate init fitness for population
         population_fitness = []
         for i in range(len(self.population)):
-            population_fitness.append(self.read_function(objective_function, self.population[i])[0])
+            population_fitness.append(self.read_function(self.objective_function, self.population[i])[0])
 
         loop = True
         loop_iteration = 0
 
-        min_val = population_fitness[0]
-        min_arg = self.population[0]
-        min_arg_x1_list = []
-        min_arg_x2_list = []
+        self.min_val = population_fitness[0]
+        self.min_arg = self.population[0]
+        self.min_arg_x1_list = []
+        self.min_arg_x2_list = []
 
         while loop == True:
             for i in range(len(self.population)):
                 el_mut = self.mutation(i)
                 el_cross = self.crossover(el_mut, i)
 
-                if self.read_function(objective_function, el_cross)[0] < population_fitness[i]:
+                if self.read_function(self.objective_function, el_cross)[0] < population_fitness[i]:
                     self.population[i] = el_cross
-                    population_fitness[i] = self.read_function(objective_function, el_cross)[0]
+                    population_fitness[i] = self.read_function(self.objective_function, el_cross)[0]
 
-                if population_fitness[i] < min_val:
-                    min_val = population_fitness[i]
-                    min_arg = self.population[i]
-                    min_arg_x1_list.append(min_arg[0])
-                    min_arg_x2_list.append(min_arg[1])
+                if population_fitness[i] < self.min_val:
+                    self.min_val = population_fitness[i]
+                    self.min_arg = self.population[i]
+                    self.min_arg_x1_list.append(self.min_arg[0])
+                    self.min_arg_x2_list.append(self.min_arg[1])
 
             loop_iteration += 1
             if loop_iteration >= self.L:
                 loop = False
 
+        if len(self.RESTRICT_FUNCTIONS) != 0:
+            self.calculate_restrict_functions()
+
+    def calculate_restrict_functions(self):
+        self.restrict_functions_values = self.read_function(self.RESTRICT_FUNCTIONS, self.min_arg)
+
+    def plot(self, trail=False):
         if self.ARG_NUMBER == 2:
             if len(self.BOUNDS[0]) != 0:
-                x = np.linspace(self.BOUNDS[0][0], self.BOUNDS[0][1], 100)
+                x = np.linspace(self.BOUNDS[0][0], self.BOUNDS[0][1], 500)
             else:
-                x = np.linspace(-5, 5, 100)
+                x = np.linspace(-5, 5, 500)
             if len(self.BOUNDS[1]) != 0:
-                y = np.linspace(self.BOUNDS[1][0], self.BOUNDS[1][1], 100)
+                y = np.linspace(self.BOUNDS[1][0], self.BOUNDS[1][1], 500)
             else:
-                y = np.linspace(-5, 5, 100)
+                y = np.linspace(-5, 5, 500)
 
             xx, yy = np.meshgrid(x, y)
 
             xy = [xx, yy]
-            z = self.read_function(objective_function, xy)[0]
+            z = self.read_function(self.objective_function, xy)[0]
 
             for restrict in self.RESTRICT_FUNCTIONS:
                 z[self.read_function([restrict], xy)[0] >= 0] = np.nan
-            # z[(xy[0] - 1) ** 3 - xy[1] + 1 >= 0] = np.nan
-            # z[xy[0] + xy[1] - 2 >= 0] = np.nan
 
             plt.figure()
             plt.colorbar(plt.contourf(xx, yy, z, 50, cmap='turbo'))
 
             plt.xlabel('x')
             plt.ylabel('y')
-            plt.plot(min_arg_x1_list,min_arg_x2_list, 'Black')
-            plt.plot(min_arg[0], min_arg[1], 'rx', ms=5)
+
+            if trail:
+                plt.plot(self.min_arg_x1_list, self.min_arg_x2_list, 'Black')
+
+            plt.plot(self.min_arg[0], self.min_arg[1], 'rx', ms=5)
 
         if self.ARG_NUMBER == 3:
             if len(self.BOUNDS[0]) != 0:
@@ -204,7 +212,7 @@ class DifferentialEvolution:
 
             U = []
             for t in range(len(X)):
-                U.append(self.read_function(objective_function, [X[t], Y[t], Z[t]])[0])
+                U.append(self.read_function(self.objective_function, [X[t], Y[t], Z[t]])[0])
 
             # Creating figure
             plt.figure()
@@ -212,10 +220,9 @@ class DifferentialEvolution:
 
             # Creating plot
             plt.colorbar(ax.scatter3D(X, Y, Z, c=U, cmap='turbo', alpha=0.7, marker='.'))
-            ax.scatter(min_arg[0], min_arg[1], min_arg[2], 'rx', linewidths=5)
+            ax.scatter(self.min_arg[0], self.min_arg[1], self.min_arg[2], 'rx', linewidths=5)
             plt.xlabel('x')
             plt.ylabel('y')
 
         plt.show()
 
-        return min_val, min_arg

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1028</width>
-    <height>720</height>
+    <width>910</width>
+    <height>660</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>220</y>
+     <y>440</y>
      <width>180</width>
      <height>28</height>
     </rect>
@@ -41,7 +41,7 @@
   <widget class="QLineEdit" name="line_insert_objective_function">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>180</x>
      <y>40</y>
      <width>550</width>
      <height>30</height>
@@ -64,7 +64,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>140</y>
+     <y>360</y>
      <width>300</width>
      <height>25</height>
     </rect>
@@ -94,7 +94,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>180</y>
+     <y>400</y>
      <width>300</width>
      <height>30</height>
     </rect>
@@ -116,7 +116,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>220</y>
+     <y>440</y>
      <width>180</width>
      <height>28</height>
     </rect>
@@ -141,7 +141,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>260</y>
+     <y>480</y>
      <width>300</width>
      <height>150</height>
     </rect>
@@ -163,7 +163,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>610</y>
+     <y>280</y>
      <width>300</width>
      <height>60</height>
     </rect>
@@ -185,7 +185,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>570</y>
+     <y>240</y>
      <width>180</width>
      <height>28</height>
     </rect>
@@ -210,7 +210,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>530</y>
+     <y>200</y>
      <width>300</width>
      <height>30</height>
     </rect>
@@ -232,7 +232,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>480</y>
+     <y>160</y>
      <width>280</width>
      <height>25</height>
     </rect>
@@ -262,7 +262,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>450</y>
+     <y>130</y>
      <width>310</width>
      <height>25</height>
     </rect>
@@ -291,7 +291,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>350</x>
      <y>10</y>
      <width>180</width>
      <height>25</height>
@@ -322,7 +322,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>570</y>
+     <y>240</y>
      <width>180</width>
      <height>28</height>
     </rect>
@@ -346,8 +346,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>190</y>
+     <x>480</x>
+     <y>130</y>
      <width>160</width>
      <height>25</height>
     </rect>
@@ -376,15 +376,15 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>190</y>
-     <width>80</width>
+     <x>670</x>
+     <y>130</y>
+     <width>120</width>
      <height>25</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>80</width>
+     <width>120</width>
      <height>25</height>
     </size>
    </property>
@@ -400,14 +400,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Variable F</string>
+    <string>Variable F [0, 2]</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>810</x>
-     <y>330</y>
+     <x>660</x>
+     <y>220</y>
      <width>140</width>
      <height>25</height>
     </rect>
@@ -436,8 +436,8 @@
   <widget class="QLineEdit" name="CR_var">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>370</y>
+     <x>680</x>
+     <y>260</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -458,8 +458,8 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>330</y>
+     <x>480</x>
+     <y>220</y>
      <width>160</width>
      <height>25</height>
     </rect>
@@ -488,7 +488,7 @@
   <widget class="QSpinBox" name="number_arg">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>490</x>
      <y>80</y>
      <width>51</width>
      <height>31</height>
@@ -509,7 +509,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>290</x>
      <y>80</y>
      <width>180</width>
      <height>25</height>
@@ -539,8 +539,8 @@
   <widget class="QPushButton" name="calculate">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>460</y>
+     <x>550</x>
+     <y>310</y>
      <width>180</width>
      <height>50</height>
     </rect>
@@ -569,8 +569,8 @@
   <widget class="QTextEdit" name="min_value">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>560</y>
+     <x>540</x>
+     <y>510</y>
      <width>250</width>
      <height>30</height>
     </rect>
@@ -591,7 +591,7 @@
   <widget class="QTextEdit" name="min_arguments">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>540</x>
      <y>600</y>
      <width>350</width>
      <height>30</height>
@@ -613,8 +613,8 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>560</y>
+     <x>540</x>
+     <y>480</y>
      <width>125</width>
      <height>25</height>
     </rect>
@@ -643,8 +643,8 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>600</y>
+     <x>540</x>
+     <y>570</y>
      <width>140</width>
      <height>25</height>
     </rect>
@@ -673,8 +673,8 @@
   <widget class="QLineEdit" name="iteration_number">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>240</y>
+     <x>500</x>
+     <y>180</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -695,8 +695,8 @@
   <widget class="QLineEdit" name="population_number">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>370</y>
+     <x>500</x>
+     <y>260</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -717,8 +717,8 @@
   <widget class="QLineEdit" name="F_var">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>240</y>
+     <x>680</x>
+     <y>180</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -736,6 +736,76 @@
     </size>
    </property>
   </widget>
+  <widget class="QPushButton" name="plot">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>380</y>
+     <width>180</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>180</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>180</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Plot</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="trail">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>400</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Show search trail</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="all_restrict_functions_values">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>480</y>
+     <width>150</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -747,11 +817,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>280</x>
-     <y>235</y>
+     <y>455</y>
     </hint>
     <hint type="destinationlabel">
      <x>259</x>
-     <y>289</y>
+     <y>509</y>
     </hint>
    </hints>
   </connection>
@@ -763,11 +833,43 @@
    <hints>
     <hint type="sourcelabel">
      <x>309</x>
-     <y>570</y>
+     <y>240</y>
     </hint>
     <hint type="destinationlabel">
      <x>238</x>
-     <y>612</y>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_restrict_functions</sender>
+   <signal>clicked()</signal>
+   <receiver>all_restrict_functions_values</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>311</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>517</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>calculate</sender>
+   <signal>clicked()</signal>
+   <receiver>all_restrict_functions_values</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>505</y>
     </hint>
    </hints>
   </connection>

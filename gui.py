@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.setFixedSize(1028, 720)
+        self.setFixedSize(910, 660)
         self.setWindowTitle("Differential Evolution Algorithm")
 
         # load ui
@@ -38,6 +38,7 @@ class MainWindow(QMainWindow):
 
         # connect signals
         self.window.calculate.clicked.connect(self.calculate)
+        self.window.plot.clicked.connect(self.plot)
 
         self.window.add_restrict_function.clicked.connect(self.add_restrict)
         self.window.clear_restrict_functions.clicked.connect(self.clear_functions)
@@ -46,6 +47,7 @@ class MainWindow(QMainWindow):
         self.window.clear_linear_bounds.clicked.connect(self.clear_bounds)
 
         self.window.all_restrict_functions.setReadOnly(True)
+        self.window.all_restrict_functions_values.setReadOnly(True)
         self.window.all_linear_bounds.setReadOnly(True)
 
         self.window.line_insert_objective_function.setText('x[0] + x[1]')
@@ -87,10 +89,19 @@ class MainWindow(QMainWindow):
         self.differential.ARG_NUMBER = self.window.number_arg.value()
         self.differential.FUNCTION = self.window.line_insert_objective_function.text()
 
-        min_val, min_arg = self.differential.differential_algorithm()
+        self.differential.differential_algorithm()
 
-        self.window.min_value.append(str(min_val))
-        self.window.min_arguments.append(str(min_arg))
+        self.window.min_value.append(str(self.differential.min_val))
+        self.window.min_arguments.append(str(self.differential.min_arg))
+
+        if len(self.differential.RESTRICT_FUNCTIONS) != 0:
+            print('DZIALA')
+            for value in self.differential.restrict_functions_values:
+                self.window.all_restrict_functions_values.append(str(value))
+
+    @Slot()
+    def plot(self):
+        self.differential.plot(self.window.trail.isChecked())
 
     @Slot()
     def add_restrict(self):
