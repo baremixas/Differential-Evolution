@@ -95,7 +95,6 @@ class MainWindow(QMainWindow):
         self.window.min_arguments.append(str(self.differential.min_arg))
 
         if len(self.differential.RESTRICT_FUNCTIONS) != 0:
-            print('DZIALA')
             for value in self.differential.restrict_functions_values:
                 self.window.all_restrict_functions_values.append(str(value))
 
