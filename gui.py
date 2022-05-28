@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.setFixedSize(910, 660)
+        self.setFixedSize(1050, 660)
         self.setWindowTitle("Differential Evolution Algorithm")
 
         # load ui
@@ -43,11 +43,15 @@ class MainWindow(QMainWindow):
         self.window.add_restrict_function.clicked.connect(self.add_restrict)
         self.window.clear_restrict_functions.clicked.connect(self.clear_functions)
 
+        self.window.inequality.clicked.connect(self.change_checkbox_equality)
+        self.window.inequality_equality.clicked.connect(self.change_checkbox_inequality_equality)
+
         self.window.insert_linear_bounds.clicked.connect(self.add_bounds)
         self.window.clear_linear_bounds.clicked.connect(self.clear_bounds)
 
         self.window.all_restrict_functions.setReadOnly(True)
         self.window.all_restrict_functions_values.setReadOnly(True)
+        self.window.all_restrict_functions_inequality.setReadOnly(True)
         self.window.all_linear_bounds.setReadOnly(True)
 
         self.window.line_insert_objective_function.setText('x[0] + x[1]')
@@ -105,9 +109,17 @@ class MainWindow(QMainWindow):
     @Slot()
     def add_restrict(self):
         fun = self.window.line_insert_restrict_function.text()
-        self.window.all_restrict_functions.append(fun)
 
-        self.differential.RESTRICT_FUNCTIONS.append(fun)
+        if fun:
+            self.window.all_restrict_functions.append(fun)
+            self.differential.RESTRICT_FUNCTIONS.append(fun)
+
+            if self.window.inequality_equality.isChecked():
+                self.window.all_restrict_functions_inequality.append('<= 0')
+                self.differential.INEQUALITY.append(False)
+            elif self.window.inequality.isChecked():
+                self.window.all_restrict_functions_inequality.append('< 0')
+                self.differential.INEQUALITY.append(True)
 
     @Slot()
     def add_bounds(self):
@@ -131,3 +143,18 @@ class MainWindow(QMainWindow):
     @Slot()
     def clear_functions(self):
         self.differential.RESTRICT_FUNCTIONS.clear()
+        self.differential.INEQUALITY.clear()
+
+    @Slot()
+    def change_checkbox_inequality_equality(self):
+        if self.window.inequality_equality.isChecked():
+            self.window.inequality.setChecked(False)
+        else:
+            self.window.inequality.setChecked(True)
+
+    @Slot()
+    def change_checkbox_equality(self):
+        if self.window.inequality.isChecked():
+            self.window.inequality_equality.setChecked(False)
+        else:
+            self.window.inequality_equality.setChecked(True)

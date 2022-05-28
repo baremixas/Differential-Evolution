@@ -27,6 +27,7 @@ class DifferentialEvolution:
     def __init__(self):
         self.BOUNDS = []
         self.RESTRICT_FUNCTIONS = []
+        self.INEQUALITY = []
 
     def initialize_population(self):
         self.population = []
@@ -77,9 +78,13 @@ class DifferentialEvolution:
                     valid = False
 
         if len(self.RESTRICT_FUNCTIONS) != 0:
-            for value in self.read_function(self.RESTRICT_FUNCTIONS, element):
-                if value > 0:
-                    valid = False
+            for i, value in enumerate(self.read_function(self.RESTRICT_FUNCTIONS, element)):
+                if self.INEQUALITY[i]:
+                    if value >= 0:
+                        valid = False
+                else:
+                    if value > 0:
+                        valid = False
 
         return valid
 
