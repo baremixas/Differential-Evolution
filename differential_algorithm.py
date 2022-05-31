@@ -225,7 +225,7 @@ class DifferentialEvolution:
 
             # Creating plot
             plt.colorbar(ax.scatter3D(X, Y, Z, c=U, cmap='turbo', alpha=0.7, marker='.'))
-            ax.scatter(self.min_arg[0], self.min_arg[1], self.min_arg[2], 'rx', linewidths=5)
+            ax.scatter(self.min_arg[0], self.min_arg[1], self.min_arg[2], edgecolor='red', linewidths=5)
             plt.xlabel('x')
             plt.ylabel('y')
 

@@ -10,6 +10,12 @@
     <height>660</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -47,6 +53,12 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>550</width>
@@ -63,7 +75,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>80</x>
      <y>360</y>
      <width>300</width>
      <height>25</height>
@@ -87,7 +99,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Insert restrict function as:  g(x[n]) &lt;= 0</string>
+    <string>Insert restrict function as:  g(x[n]) &lt; 0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_insert_restrict_function">
@@ -98,6 +110,12 @@
      <width>300</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -146,6 +164,12 @@
      <height>150</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>300</width>
@@ -167,6 +191,12 @@
      <width>300</width>
      <height>60</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -215,6 +245,12 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>300</width>
@@ -231,7 +267,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>80</x>
      <y>160</y>
      <width>280</width>
      <height>25</height>
@@ -261,7 +297,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>70</x>
      <y>130</y>
      <width>310</width>
      <height>25</height>
@@ -291,7 +327,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>450</x>
      <y>10</y>
      <width>180</width>
      <height>25</height>
@@ -346,8 +382,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>130</y>
+     <x>610</x>
+     <y>140</y>
      <width>160</width>
      <height>25</height>
     </rect>
@@ -376,8 +412,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>130</y>
+     <x>800</x>
+     <y>140</y>
      <width>120</width>
      <height>25</height>
     </rect>
@@ -400,13 +436,13 @@
     </font>
    </property>
    <property name="text">
-    <string>Variable F [0, 2]</string>
+    <string>Variable F [0, 1]</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>800</x>
      <y>220</y>
      <width>140</width>
      <height>25</height>
@@ -437,10 +473,16 @@
    <property name="geometry">
     <rect>
      <x>800</x>
-     <y>260</y>
+     <y>250</y>
      <width>100</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -458,7 +500,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>610</x>
      <y>220</y>
      <width>160</width>
      <height>25</height>
@@ -488,7 +530,7 @@
   <widget class="QSpinBox" name="number_arg">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>570</x>
      <y>80</y>
      <width>51</width>
      <height>31</height>
@@ -509,7 +551,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>390</x>
      <y>80</y>
      <width>180</width>
      <height>25</height>
@@ -575,6 +617,12 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>260</width>
@@ -596,6 +644,12 @@
      <width>360</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -674,10 +728,16 @@
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>180</y>
+     <y>170</y>
      <width>100</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -696,10 +756,16 @@
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>260</y>
+     <y>250</y>
      <width>100</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -718,10 +784,16 @@
    <property name="geometry">
     <rect>
      <x>800</x>
-     <y>180</y>
+     <y>170</y>
      <width>100</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
@@ -793,6 +865,12 @@
      <height>150</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>210</width>
@@ -857,6 +935,12 @@
      <height>150</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>50</width>
@@ -875,19 +959,25 @@
     <rect>
      <x>440</x>
      <y>450</y>
-     <width>210</width>
+     <width>200</width>
      <height>25</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
-     <width>210</width>
+     <width>200</width>
      <height>25</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>210</width>
+     <width>200</width>
      <height>25</height>
     </size>
    </property>
@@ -897,7 +987,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Restriction values from min</string>
+    <string>Restriction values for min</string>
    </property>
   </widget>
  </widget>

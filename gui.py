@@ -53,6 +53,8 @@ class MainWindow(QMainWindow):
         self.window.all_restrict_functions_values.setReadOnly(True)
         self.window.all_restrict_functions_inequality.setReadOnly(True)
         self.window.all_linear_bounds.setReadOnly(True)
+        self.window.min_value.setReadOnly(True)
+        self.window.min_arguments.setReadOnly(True)
 
         self.window.line_insert_objective_function.setText('x[0] + x[1]')
         self.window.line_insert_linear_bounds.setText('[]')
