@@ -27,6 +27,7 @@ The application is far from perfect. We plan to improve things such as:
 - prevent user from inputting conflicting values.
 
 ## Screens
+
 <p align="center">
 	<img width="90%" src="./images/application.png">
 </p>
