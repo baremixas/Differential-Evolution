@@ -141,8 +141,12 @@ class DifferentialEvolution:
 
         self.min_val = population_fitness[0]
         self.min_arg = self.population[0]
-        self.min_arg_x1_list = []
-        self.min_arg_x2_list = []
+
+        # # variables used to test best values configuration
+        # self.min_arg_x1_list = []
+        # self.min_arg_x2_list = []
+        # self.min_val_vec = []
+        # self.min_ite_vec = []
 
         while loop == True:
             for i in range(len(self.population)):
@@ -156,8 +160,10 @@ class DifferentialEvolution:
                 if population_fitness[i] < self.min_val:
                     self.min_val = population_fitness[i]
                     self.min_arg = self.population[i]
-                    self.min_arg_x1_list.append(self.min_arg[0])
-                    self.min_arg_x2_list.append(self.min_arg[1])
+                    # self.min_val_vec.append(self.min_val)
+                    # self.min_ite_vec.append(loop_iteration)
+                    # self.min_arg_x1_list.append(self.min_arg[0])
+                    # self.min_arg_x2_list.append(self.min_arg[1])
 
             loop_iteration += 1
             if loop_iteration >= self.L:
@@ -165,6 +171,12 @@ class DifferentialEvolution:
 
         if len(self.RESTRICT_FUNCTIONS) != 0:
             self.calculate_restrict_functions()
+
+        # # Check for first min iteration
+        # for i, value in enumerate(self.min_val_vec):
+        #     if abs(value - self.min_val_vec[-1]) < 0.000001:
+        #         print(self.min_ite_vec[i])
+        #         return
 
     def calculate_restrict_functions(self):
         self.restrict_functions_values = self.read_function(self.RESTRICT_FUNCTIONS, self.min_arg)

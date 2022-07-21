@@ -2,27 +2,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, Q
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Slot
 
-import numpy as np
-
 from differential_algorithm import DifferentialEvolution
-
-def sin(x):
-    return np.sin(x)
-
-def asin(x):
-    return np.arcsin(x)
-
-def cos(x):
-    return np.cos(x)
-
-def tan(x):
-    return np.tan(x)
-
-def atan(x):
-    return np.arctan(x)
-
-def sqrt(x):
-    return np.sqrt(x)
 
 
 class MainWindow(QMainWindow):
@@ -49,6 +29,7 @@ class MainWindow(QMainWindow):
         self.window.insert_linear_bounds.clicked.connect(self.add_bounds)
         self.window.clear_linear_bounds.clicked.connect(self.clear_bounds)
 
+        # make fields read-only
         self.window.all_restrict_functions.setReadOnly(True)
         self.window.all_restrict_functions_values.setReadOnly(True)
         self.window.all_restrict_functions_inequality.setReadOnly(True)
@@ -56,6 +37,7 @@ class MainWindow(QMainWindow):
         self.window.min_value.setReadOnly(True)
         self.window.min_arguments.setReadOnly(True)
 
+        # set initial, required values
         self.window.line_insert_objective_function.setText('x[0] + x[1]')
         self.window.line_insert_linear_bounds.setText('[]')
         self.window.iteration_number.setText('50')
