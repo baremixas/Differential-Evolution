@@ -1,6 +1,6 @@
 # Differential Evolution Algorithm
- 
-The application was created as university project.
+
+The application was created as university project in a team consisting of [baremixas](https://github.com/baremixas) and [bartekEhu](https://github.com/bartekEhu).
 
 ## Table of contents
 * [General info](#general-info)
@@ -17,8 +17,8 @@ Through the interface application lets user input all necessary values for given
 ## Installation
 
 To run application you need to download only 2 files.<br />
-The first is [ApplicationGUI](./ApplicationGUI.ui) responsible for the UI of app.
-The second is [differential_evolution](./differential_evolution.exe) which launches program.
+The first is [ApplicationGUI.ui](./ApplicationGUI.ui) responsible for the UI of app.
+The second is [differential_evolution.exe](./differential_evolution.exe) which launches program.
 
 ## Future
 
